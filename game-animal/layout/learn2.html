@@ -1,0 +1,131 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+       body {
+            background-image: url(../images/b11ee090b2adfa525aefc880db259158.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #d1{
+            margin-top: 10px;
+            font-size: 70px;
+            color: black;
+            background-color: antiquewhite;
+            width: 600px;
+            border-radius: 10px;
+        }
+        .b1{
+          height: 70px;
+           width: 150px;
+            background-color: lightpink;
+           border-radius: 5px;
+            font-size: 30px;
+        }
+        #d2{
+            margin-left: 100px;
+            margin-top: 50px;
+        }
+        #i1{
+            height: 400px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div id="d1">
+            Time To Play!
+        </div> 
+    </center>
+    <div class="row" id="d2">
+       <div class="col-md-3">
+        <button onclick="fun(this)" class="b1" type="button" id="1">Rabbit</button> <br> <br>
+        <button onclick="fun(this)" class="b1" type="button" id="2">Bear</button> <br> <br>
+        <button onclick="fun(this)" class="b1" type="button" id="3">Ostrich</button> <br> <br>
+        <button onclick="fun(this)" class="b1" type="button" id="4">Panda</button> <br> <br>
+        <button onclick="fun(this)" class="b1" type="button" id="5">Monkey</button>
+       </div>
+
+    <div class="col-md-6">
+         <img src="../images/download.jpg" id="i1" onclick="numb()">
+         <hr>
+         <center>
+            <div style="background-color: white;">
+                <h1 id="score" style="color: black;">
+                    Score: 0
+                 </h1>
+            </div>
+         </center>
+         <div>
+            <h1 id="score"></h1>
+         </div>
+         <div>
+            <h3 id="ans"></h3>
+         </div>
+        </div>
+       <div class="col-md-3">
+        <button onclick="fun(this)" class="b1" type="button" id="6">Crocodile</button> <br> <br>
+        <button onclick="fun(this)" class="b1" type="button" id="7">Elephant</button> <br> <br>
+        <button onclick="fun(this)" class="b1" type="button" id="8">Gorilla</button> <br> <br>
+        <button onclick="fun(this)" class="b1" type="button" id="9">Kangaroo</button> <br> <br>
+        <button onclick="fun(this)" class="b1" type="button" id="10">Squirrel</button>
+
+       </div>
+    </div>
+       </body>
+</html>
+<script>
+// let arr=["Rabbit","Bear","Ostrich","Panda","Monkey","Crocodile","Elephant","Gorilla","Kangaroo","Squirrel","Penguin"];
+let array=[];
+let cnt=0;
+let x;
+let score=0;
+let Animals={
+    10:"../images/squirrel.jpg",
+    1:"../images/rabbit.jpg",
+    4:"../images/panda.jpg",
+    3:"../images/ostrich.jpg",
+    5:"../images/monkey.jpg",
+    9:"../images/kangaroo.jpg", 
+    8:"../images/gorilla.jpg",
+    7:"../images/elephant.jpg",
+    6:"../images/crocodile.jpg",
+    2:"../images/bear.jpg",
+};
+
+function fun(elements){
+    if(array.includes[x]){
+        numb();
+    }
+    else{
+    if(x==elements.id){
+        document.getElementById(elements.id).setAttribute("style","background-color: green; height: 70px; width: 150px; border-radius: 5px; font-size: 30px");
+        score+=10;
+        document.getElementById("score").innerHTML="YOUR SCORE IS :" + score;
+        cnt++;
+        numb();
+    }
+    else{
+        let ans=document.getElementById(x).innerHTML;
+        document.getElementById("score").innerHTML="The Correct Answer is :"+ ans;
+        document.getElementById("i1").setAttribute("src","../images/lose.jpg");
+        
+    }
+    if(cnt==10){
+        document.getElementById("score").innerHTML="Yeahh!! YOU WIN";
+        document.getElementById("i1").setAttribute("src","../images/win.jpg");
+    }
+}
+}
+function numb(){
+    x = Math.ceil((Math.random()*10));
+    array.push(x);
+    let i=document.getElementById("i1");
+    i.setAttribute('src',Animals[x]);
+}
+</script>

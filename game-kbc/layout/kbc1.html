@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+</head>
+<body style="background-image: url(../images/chesser.jpg); background-repeat: no-repeat; background-size: cover;">
+<div class="row">
+    <div class="col-md-3">
+        <img src="../images/kbc1.jpg" alt="" style="height:350px; width: 390px; margin-right: 2px;">
+    </div>
+    <div class="col-md-6 mt-5">
+        <div id="op" style="margin-left: 7px; border: 2px solid black; height: 300px;">
+            <center><h3 style="margin-top: 10px;" id="score"><b></b></h3></center>
+            <center><h2 style="margin-top: 30px;" id="right"><b></b></h3></center>
+            <center><button onclick="clk()" type="button" class="btn btn-outline-success btn-lg" style="margin-top: 100px; color: white;">CLICK TO SEE QUESTION</button></center>
+            <br>
+        </div>
+
+    </div>
+    <div class="col-md-3" style="background-color: rgb(186, 119, 186);">
+        <h6 style="margin-top: 20px; margin-left: 10px;">10.<b style="margin-left: 40px;">₹1 crore</b></h6>
+        <h6 style="margin-top: 20px; margin-left: 10px;">9.<b style="margin-left: 40px;">₹1,280,000</b></h6>
+        <h6 style="margin-top: 20px; margin-left: 10px;">8.<b style="margin-left: 40px;">₹640,000</b></h6>
+        <h6 style="margin-top: 20px; margin-left: 10px;">7.<b style="margin-left: 40px;">₹320,000</b></h6>
+        <h6 style="margin-top: 20px; margin-left: 10px;">6.<b style="margin-left: 40px;">₹160,000</b></h6>
+        <h6 style="margin-top: 20px; margin-left: 10px;">5.<b style="margin-left: 40px;">₹80,000</b></h6>
+        <h6 style="margin-top: 20px; margin-left: 10px;">4.<b style="margin-left: 40px;">₹40,000</b></h6>
+        <h6 style="margin-top: 20px; margin-left: 10px;">3.<b style="margin-left: 40px;">₹20,000</b></h6>
+        <h6 style="margin-top: 20px; margin-left: 10px;">2.<b style="margin-left: 40px;">₹10,000</b></h6>
+        <h6 style="margin-top: 20px; margin-left: 10px;">1.<b style="margin-left: 40px;">₹5,000</b></h6>
+    </div>
+</div>
+ <div class="row" style="width:900px; margin-left: 50px; margin-top: 0px;">
+    <h4 id="question"><b style="margin-left: 10px;"></b></h4>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <h5 id="a" onclick="clk2('a')"></h5>
+            </div>
+            <div class="col-md-4">
+                <h5 id="b" onclick="clk2('b')"></h5>
+            </div>
+            <div class="col-md-3">
+                <a href="kbc.html"><button type="button" class="btn btn-danger" class="form-label" style="margin-left: 350px; margin-top: 0px">Exit</button></a><br><br>
+                <h5 id="tym" style="margin-left: 350px; margin-top: 0px;">25</h5>
+            </div>
+        </div>
+            
+        <div class="row">
+            <div class="col-md-4">
+                <h5 id="c" onclick="clk2('c')"></h5>
+            </div>
+            <div class="col-md-4">
+                <h5 id="d" onclick="clk2('d')"></h5>
+            </div>
+        </div>
+        
+        
+    <!-- <button onclick="clk2('a')" id="a" style="margin-left: 200px;"></button>
+    <button onclick="clk2('b')" id="b" class="form-label" style="margin-left: 200px;"></button><br><br>
+    <button onclick="clk2('c')" id="c" class="form-label" style="margin-left: 200px;"></button>
+    <button onclick="clk2('d')" id="d" class="form-label" style="margin-left: 200px;"></button> -->
+    
+    
+</body>
+<script>
+        let questions=["1. What does “Jugnoo” produce?","2. A coin of what value is called as “Athhanni”?" , "3. Which poem opens with the lines “Simhasan hil uthe, rajvanshon ne Bhrikuthi thani thi, Boodhhe Bharat mein bhi aayi, phir se nayi jawani thi”??" , " 4. What is Balushahi a type of?"];
+        let option1=["(a) Sahad-honey" ,"(a) 1 Rupee","(a) Veeron ka Kaisa ho Basant","(a) Sweet"];
+        let option2=["(b) Kapas-cotton","(b) 25 Paise","(b)  Jhansi Ki Rani" ,"(b) paper Art"];
+        let option3=["(c) Prakash-Light" , "(c) 50 Paise", "(c)  Rakhi Ki Chunauti" ,"(c) Dance Form"];
+        let option4=["(d) Mome-Wax","(d) 2 Rupees" ,"(d) Vidaa" , "(d) Turban"];
+        let change=document.getElementById("question");
+        let bt1=document.getElementById("a");
+        let bt2=document.getElementById("b");
+        let bt3=document.getElementById("c");
+        let bt4=document.getElementById("d");
+        let correctans=["c","c","b","a"];
+        var queno=0;
+        let sc=2500;
+        let tim=25;
+        let tt=document.getElementById("tym");
+        let no=4;
+        let flag=0;
+        timer();
+        function clk(){
+            if(no==0){
+                window.location.href='kbcwin.html';
+            }
+            flag=0;
+            tim=25;
+            timer();
+            let ri=document.getElementById("right").innerHTML="";
+                let r=document.createElement("div");
+                r.setAttribute("style","background-color: lightgreen");
+                let g=document.createElement("h3");
+                g.setAttribute("style","color:black");
+                change.innerHTML="";
+                g.innerHTML=questions[queno];
+                r.appendChild(g);
+                change.appendChild(r);
+
+                let butt=document.createElement("button");
+                butt.setAttribute("type","button");
+                // butt.setAttribute("onclick()","clk2('a')");
+                let boo=document.createElement("h5");
+                bt1.innerHTML="";
+                bt1.setAttribute("style","margin-left: 200px");
+                bt1.setAttribute("type","button");
+                bt1.setAttribute("class" ,"btn-outline-dark btn-lg");
+                boo.innerHTML=option1[queno];
+                butt.appendChild(boo);
+                bt1.appendChild(butt);
+
+                let op=document.createElement("button");
+                op.setAttribute("type","button");
+                let op1=document.createElement("h5");
+                bt2.innerHTML="";
+                bt2.setAttribute("style","margin-left: 200px");
+                bt2.setAttribute("type","button");
+                bt2.setAttribute("class" ,"btn-outline-dark btn-lg");
+                op1.innerHTML=option2[queno];
+                op.appendChild(op1);
+                bt2.appendChild(op);
+
+                let opp=document.createElement("button");
+                opp.setAttribute("type","button");
+                let op2=document.createElement("h5");
+                bt3.innerHTML="";
+                bt3.setAttribute("style","margin-left: 200px");
+                bt3.setAttribute("type","button");
+                bt3.setAttribute("class" ,"btn-outline-dark btn-lg");
+                op2.innerHTML=option3[queno];
+                opp.appendChild(op2);
+                bt3.appendChild(opp);
+                
+                let oppp=document.createElement("button");
+                oppp.setAttribute("type","button");
+                let op3=document.createElement("h5");
+                bt4.innerHTML="";
+                bt4.setAttribute("style","margin-left: 200px;");
+                bt4.setAttribute("type","button");
+                bt4.setAttribute("class" ,"btn-outline-dark btn-lg");
+                op3.innerHTML=option4[queno];
+                oppp.appendChild(op3);
+                bt4.appendChild(oppp);
+        }
+        function clk2(ans){
+            if(ans==correctans[queno]){
+                flag=1;
+                no--;
+                let btt=document.getElementById(ans);
+                btt.setAttribute("style","background-color:green;margin-left:200px;color:white");
+                queno++;
+                let mul=sc*2;
+                let abb=document.getElementById("score").innerHTML="YOUR SCORE IS:" + mul;
+                sc=mul;
+                let ri=document.getElementById("right").innerHTML="YOUR ANSWER IS CORRECT";
+                const next=setTimeout(clk,1000);
+            }
+            else{
+                window.alert("YOU LOSE THE GAME");
+                window.location.href='kbc.html';
+
+            }
+        }
+            function timer(){
+                tt.innerHTML=tim+"sec";
+                tim--;
+                if(tim==0){
+                    window.alert("TIMES UP! YOU LOSE");
+                    window.location.href='kbc.html';
+                }
+                if(flag!=1){
+                    const time=setTimeout(timer,1000);  
+                }
+            }       
+</script>
+</html>
